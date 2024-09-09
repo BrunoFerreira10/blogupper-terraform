@@ -6,7 +6,7 @@ module "rds_mysql" {
   vpc                 = module.data.projects.vpc_app.vpc
   rds_configuration = {
     db_name                   = module.data.github_vars.rds_1_db_name
-    db_username               = module.data.github_vars.rds_1_db_user
+    db_username               = module.data.github_vars.rds_1_db_username
     ssm_parameter_db_password = "rds_1_db_password",
     instance_class            = "db.t3.micro"
     subnet_ids = [
