@@ -3,6 +3,9 @@
 ## --------------------------------------------------------------------------------------------------------------------
 locals {
   components_configuration = {
+    apache_install = {
+      description = "Instalar apache2"
+    },
     apache_uninstall = {
       description = "Desinstala apache2"
     },
