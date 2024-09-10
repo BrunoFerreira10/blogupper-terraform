@@ -7,10 +7,10 @@ phases:
       - apt install -y zip  # Instalar a ferramenta zip
   build:
     commands:
-      - echo "------ Copiar arquivo para deploy ------"
+      - echo "------ Copiar arquivos para a pasta build, exceto a própria pasta build ------"
       - mkdir -p build
       - ls -la
-      - cp -r ./* build/
+      - rsync -av --exclude='build' ./ build/
 
 artifacts:
   files:
