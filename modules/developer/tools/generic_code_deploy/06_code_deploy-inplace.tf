@@ -28,7 +28,7 @@ resource "aws_codedeploy_deployment_group" "this" {
   }
 
   auto_rollback_configuration {
-    enabled = true
+    enabled = false
     events  = ["DEPLOYMENT_FAILURE"]
   }
 
