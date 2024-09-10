@@ -5,17 +5,9 @@
 echo "#### Iniciado user data ####"
 
 # --------------------------------------------------------------------------------------------------------------------
-# Update /etc/fstab and mount filesystems
+# Do nothing
 # --------------------------------------------------------------------------------------------------------------------
-echo "#### Montagem do sistema de arquivos EFS ####"
 
-mkdir -p /var/www/html/storage
-
-echo "${EFS_DNS_NAME}:/ /var/www/html/storage efs defaults,_netdev 0 0" >> /etc/fstab
-mount -a
-
-chown www-data:www-data /var/www/html
-chown www-data:www-data /var/www/html/storage
 
 ## --------------------------------------------------------------------------------------------------------------------
 ## Create finish flag files on /tmp/userdata_finished
