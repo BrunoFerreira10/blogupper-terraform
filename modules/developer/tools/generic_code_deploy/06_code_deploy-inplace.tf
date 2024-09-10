@@ -35,7 +35,7 @@ resource "aws_codedeploy_deployment_group" "this" {
   ec2_tag_set {
     ec2_tag_filter {
       key   = "Name"
-      value = "asg_easy_appointments"
+      value = "asg_${var.shortname}"
       type  = "KEY_AND_VALUE"
     }
   }
