@@ -14,7 +14,7 @@ module "elb_app" {
   sg_elb_rules = {
     ingress = {
       HTTP = { port = 80, cidr_ipv4 = "0.0.0.0/0" }
-      # HTTPS = { port = 443, cidr_ipv4 = "0.0.0.0/0" }
+      HTTPS = { port = 443, cidr_ipv4 = "0.0.0.0/0" }
     },
     egress = {
       All = { ip_protocol = "-1", cidr_ipv4 = "0.0.0.0/0" }
