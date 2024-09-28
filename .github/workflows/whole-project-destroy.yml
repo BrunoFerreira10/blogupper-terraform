@@ -48,26 +48,26 @@ jobs:
       ACTION: 'd'
     secrets: inherit
 
-  image_builder_app:
-    needs: [
-      elb_app
-    ]
-    uses: ./.github/workflows/single-sub-project-run.yml
-    with:
-      RESOURCE: '4c'
-      ACTION: 'd'
-    secrets: inherit
-
   ami_app:
     needs: [
-      elb_app,
-      image_builder_app
+      elb_app
     ]
     uses: ./.github/workflows/single-sub-project-run.yml
     with:
       RESOURCE: '5a'
       ACTION: 'd'
     secrets: inherit
+
+  image_builder_app:
+    needs: [
+      elb_app,
+      ami_app
+    ]
+    uses: ./.github/workflows/single-sub-project-run.yml
+    with:
+      RESOURCE: '4c'
+      ACTION: 'd'
+    secrets: inherit  
 
   efs_app:
     needs: [
